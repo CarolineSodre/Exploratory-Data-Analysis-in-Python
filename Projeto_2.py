@@ -88,13 +88,13 @@ autopct_pie_plot = (data_sales_by_segment_sum[0], data_sales_by_segment_sum[1], 
 print("The Segment that Had the Highest Total Sales was: ", data_sales_by_segment_sum.idxmax())
 
 # Creating a pie graph 
-plt.figure(figsize = (10, 9))
+plt.figure(figsize = (10, 10))
 data_sales_by_segment_sum.plot.pie(colors = {'lightblue', 'lightcoral', 'lightgreen'}, autopct = lambda p: '{:.2f}%  ({:,.0f})'.format(p, p*sum(data_sales_by_segment_sum)/100))
 
 # Clean the central circle
 centre_circle = plt.Circle((0, 0), 0.82, fc = 'white')
 plt.gcf().gca().add_artist(centre_circle)
-
+plt.ylabel('')
 plt.title('Total Sales by Segment')
 plt.show()
 
